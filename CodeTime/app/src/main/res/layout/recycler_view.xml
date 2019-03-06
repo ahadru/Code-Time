@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/list_item"
+    >
+
+
+
+    <TextView
+        android:id="@+id/list_item_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#999999"
+        android:text="Title"
+        android:textSize="40sp" />
+
+    <ImageView
+        android:id="@+id/contest_title_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher_code_time"
+        android:layout_below="@id/list_item_title"/>
+    <TextView
+        android:id="@+id/contest_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textSize="30sp"
+        android:layout_below="@+id/list_item_title"
+        android:layout_toRightOf="@+id/contest_title_image" />
+    <TextView
+        android:id="@+id/contest_status"
+        android:layout_below="@id/contest_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:layout_toRightOf="@id/contest_title_image"
+        android:textSize="20sp"/>
+    <!--<TextView-->
+        <!--android:id="@+id/timezone"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Timezone:Asia"-->
+        <!--android:textSize="20sp"-->
+        <!--android:layout_below="@id/contest_title_image"-->
+        <!--/>-->
+</RelativeLayout>
+

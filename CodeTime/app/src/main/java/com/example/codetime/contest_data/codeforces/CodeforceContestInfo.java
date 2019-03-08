@@ -1,9 +1,7 @@
 package com.example.codetime.contest_data.codeforces;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class CodeforceContestInfo {
     private Groups allContest;
@@ -11,9 +9,11 @@ public class CodeforceContestInfo {
     private Groups longContest;
     private Groups finishedContest;
     private Groups liveContest;
+    private String json;
 
     //Constructor
     public CodeforceContestInfo(String json){
+        this.json = json;
         try {
             allContest = jsonToObject(json);
         } catch (FileNotFoundException e) {
@@ -25,7 +25,7 @@ public class CodeforceContestInfo {
 
     }
 
-    public Data getAllContest() {
+    public Groups getAllContest() {
         return allContest;
     }
 
@@ -33,7 +33,7 @@ public class CodeforceContestInfo {
         this.allContest = allContest;
     }
 
-    public Data getShortContest() {
+    public Groups getShortContest() {
         return shortContest;
     }
 
@@ -41,7 +41,7 @@ public class CodeforceContestInfo {
         this.shortContest = shortContest;
     }
 
-    public Data getLongContest() {
+    public Groups getLongContest() {
         return longContest;
     }
 
@@ -49,7 +49,7 @@ public class CodeforceContestInfo {
         this.longContest = longContest;
     }
 
-    public Data getFinishedContest() {
+    public Groups getFinishedContest() {
         return finishedContest;
     }
 
@@ -57,7 +57,7 @@ public class CodeforceContestInfo {
         this.finishedContest = finishedContest;
     }
 
-    public Data getLiveContest() {
+    public Groups getLiveContest() {
         return liveContest;
     }
 
@@ -65,20 +65,19 @@ public class CodeforceContestInfo {
         this.liveContest = liveContest;
     }
 
-    public Data getUpComingContest() {
+    public Groups getUpComingContest() {
         return upComingContest;
     }
 
-    public void setUpComingContest(Data upComingContest) {
+    public void setUpComingContest(Groups upComingContest) {
         this.upComingContest = upComingContest;
     }
 
-    private Data upComingContest;
+    private Groups upComingContest;
 
 
 
     Groups jsonToObject(String json) throws FileNotFoundException {
-
         ArrayList<String> name = new ArrayList<>();
         ArrayList<String> type = new ArrayList<>();
         ArrayList<String> phase = new ArrayList<>();
@@ -87,11 +86,6 @@ public class CodeforceContestInfo {
         ArrayList<Integer>startTimeSeconds = new ArrayList<>();
         ArrayList<Integer> relativeTimeSeconds = new ArrayList<>();
 
-
-        Scanner in = new Scanner(new File("app/src/main/assets/codeforces/all_contest_data"));
-        while(in.hasNext()){
-            json = json + in.nextLine();
-        }
         // Now do the magic.
         String str = json.split("\\[")[1];
         if(json.substring(0, 100).contains("OK")){

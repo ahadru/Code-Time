@@ -3,6 +3,7 @@ package com.example.codetime.contest_data.codeforces;
 import java.util.ArrayList;
 public class Groups extends Data{
     public int id;
+    public final String WEBSITE_NAME = "Codeforces";
     public  ArrayList<String> name;
     public ArrayList<String> type;
     public ArrayList<String> phase;
@@ -21,4 +22,10 @@ public class Groups extends Data{
     //     relativeTimeSeconds = new ArrayList<>();
     // }
 
+    //minimum size of all data
+    public int getMinSize(){
+        int s = Math.min(name.size(),phase.size());
+        s = Math.min(s,durationSeconds.size());
+        return s;
+    }
 }

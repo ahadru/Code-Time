@@ -21,6 +21,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.io.InputStream;
+
 import static com.example.codetime.R.id.list_item;
 
 public class MainActivity extends AppCompatActivity
@@ -54,8 +56,24 @@ public class MainActivity extends AppCompatActivity
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        String []titles = {"A","b","e","r","t","d","f","g","h","m","n","b","v","c","x","z"};
-        recyclerView.setAdapter(new RecyclerViewAdapter(titles));
+
+        //recycle view by these data
+        String []titles = {"1","b","e","r","t","d","f","g","h","m","n","b","v","c","x","z"};
+        String json = "";
+        try{
+            InputStream is = getAssets().open("all_contest_data");
+            int size = is.available();
+            byte[] buffer = new byte[size];
+            is.read(buffer);
+            is.close();
+            json = new String(buffer);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+        CodeforceContestInfo info = new CodeforceContestInfo(json);
+        recyclerView.setAdapter(new RecyclerViewAdapter(info.getAllContest()));
 
     }
 

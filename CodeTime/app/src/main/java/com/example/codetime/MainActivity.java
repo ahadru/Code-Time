@@ -1,6 +1,9 @@
 package com.example.codetime;
+import com.example.codetime.contest_api_call.CodeforcesUpdate;
 import com.example.codetime.contest_data.codeforces.*;
 
+import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,8 +23,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.InputStream;
+import java.io.OutputStream;
 
 import static com.example.codetime.R.id.list_item;
 
@@ -57,25 +62,42 @@ public class MainActivity extends AppCompatActivity
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
-        //recycle view by these data
-        String []titles = {"1","b","e","r","t","d","f","g","h","m","n","b","v","c","x","z"};
-        String json = "";
-        try{
-            InputStream is = getAssets().open("all_contest_data");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer);
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+        //modified Activity Task
 
-        CodeforceContestInfo info = new CodeforceContestInfo(json);
-        recyclerView.setAdapter(new RecyclerViewAdapter(info.getAllContest()));
+
+
+
+        //Activity Task when the app will run
+        //recycle view by these data
+        String json = "";
+        CodeforcesUpdate internet = new CodeforcesUpdate();
+        internet.execute();
+        json = internet.getData();
+        if(json == null){
+            Toast.makeText(getApplicationContext(),"Data not find from internet", Toast.LENGTH_SHORT);
+            try {
+                InputStream is = getAssets().open("all_contest_data");
+                int size = is.available();
+                byte[] buffer = new byte[size];
+                is.read(buffer);
+                is.close();
+                json = new String(buffer);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            CodeforceContestInfo info = new CodeforceContestInfo(json);
+            recyclerView.setAdapter(new RecyclerViewAdapter(info.getAllContest()));
+
+        }
+        else{
+            CodeforceContestInfo info = new CodeforceContestInfo(json);
+            recyclerView.setAdapter(new RecyclerViewAdapter(info.getAllContest()));
+        }
 
     }
+
+
+
 
     @Override
     public void onBackPressed() {

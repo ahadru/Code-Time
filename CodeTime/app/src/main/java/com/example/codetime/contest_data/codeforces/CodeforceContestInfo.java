@@ -9,11 +9,9 @@ public class CodeforceContestInfo {
     private Groups longContest;
     private Groups finishedContest;
     private Groups liveContest;
-    private String json;
 
     //Constructor
     public CodeforceContestInfo(String json){
-        this.json = json;
         try {
             allContest = jsonToObject(json);
         } catch (FileNotFoundException e) {

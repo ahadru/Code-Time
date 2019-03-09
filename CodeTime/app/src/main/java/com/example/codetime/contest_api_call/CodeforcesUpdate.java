@@ -1,19 +1,35 @@
 package com.example.codetime.contest_api_call;
 
+import android.content.Context;
 import android.os.AsyncTask;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Codeforces /*extends AsyncTask<String,String,String> */{
+public class CodeforcesUpdate extends AsyncTask<String,String,String>{
+    final String API_URL = "http://codeforces.com/api/contest.list?gym=false";
+    private String data;
 
+    public String getData(){
+        return data;
+    }
 
-    public String update() {
-        final String API_URL = "http://codeforces.com/api/contest.list?gym=false";
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+    }
+
+    @Override
+    protected void onPostExecute(String s) {
+        super.onPostExecute(s);
+    }
+
+    @Override
+    protected String doInBackground(String... strings) {
         StringBuilder strBuild = new StringBuilder();
-
         try {
             URL url = new URL(API_URL);
             HttpURLConnection u = (HttpURLConnection) url.openConnection();
@@ -24,6 +40,7 @@ public class Codeforces /*extends AsyncTask<String,String,String> */{
                 while ((line = internetBuffer.readLine()) != null) {
                     strBuild.append(line);
                 }
+                data = strBuild.toString();
                 internetBuffer.close();
 
 
@@ -37,22 +54,6 @@ public class Codeforces /*extends AsyncTask<String,String,String> */{
             //TODO: handle exception
             e.printStackTrace();
         }
-        return strBuild.toString();
+        return null;
     }
-
-//    @Override
-//    protected void onPreExecute() {
-//        super.onPreExecute();
-//    }
-//
-//    @Override
-//    protected void onPostExecute(String s) {
-//        super.onPostExecute(s);
-//    }
-//
-//    @Override
-//    protected String doInBackground(String... strings) {
-//
-//        return null;
-//    }
 }

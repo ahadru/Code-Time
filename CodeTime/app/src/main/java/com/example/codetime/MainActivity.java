@@ -2,8 +2,6 @@ package com.example.codetime;
 import com.example.codetime.contest_api_call.CodeforcesUpdate;
 import com.example.codetime.contest_data.codeforces.*;
 
-import android.content.Context;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,17 +16,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.InputStream;
-import java.io.OutputStream;
-
-import static com.example.codetime.R.id.list_item;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {

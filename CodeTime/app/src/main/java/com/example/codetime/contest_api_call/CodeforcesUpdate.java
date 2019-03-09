@@ -1,11 +1,8 @@
 package com.example.codetime.contest_api_call;
 
-import android.content.Context;
 import android.os.AsyncTask;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 

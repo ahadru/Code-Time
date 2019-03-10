@@ -1,5 +1,7 @@
 package com.example.codetime.contest_data.codeforces;
 
+import android.util.Log;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
@@ -9,6 +11,8 @@ public class CodeforceContestInfo {
     private Groups longContest;
     private Groups finishedContest;
     private Groups liveContest;
+
+    String a = "";
 
     //Constructor
     public CodeforceContestInfo(String json){
@@ -85,97 +89,95 @@ public class CodeforceContestInfo {
         ArrayList<Integer> relativeTimeSeconds = new ArrayList<>();
 
         // Now do the magic.
+
+        int finished = 4;
         String str = json.split("\\[")[1];
-        if(json.substring(0, 100).contains("OK")) {
+        a =str;
+        if(json.substring(0, 100).contains("OK")){
             Data.STATUS = true;
         }
-        for(int i = 0; i < json.length()-30 ; i++) {
+        for(int i = 0; i < str.length()-30 ; i++) {
 
-            if(json.substring(i, i+6).contains("\"name\"")){
+            if(str.substring(i, i+6).contains("\"name\"")){
                 i = i + 6;
                 String tmp = "";
-                while(json.charAt(i) != '"'){
+                while(str.charAt(i) != '"'){
                     i++;
                 }
                 i++;
-                while(json.charAt(i) != '"'){
-                    tmp = tmp + Character.toString(json.charAt(i));
+                while(str.charAt(i) != '"'){
+                    tmp = tmp + Character.toString(str.charAt(i));
                     i++;
                 }
-                i++;
                 name.add(tmp);
             }
-            else if(json.substring(i, i+7).contains("\"phase\"")){
+            else if(str.substring(i, i+7).contains("\"phase\"")){
                 String tmp = "";
                 i = i+7;
-                while(json.charAt(i) != '"'){
+                while(str.charAt(i) != '"'){
                     i++;
                 }
                 i++;
-                while(json.charAt(i) != '"'){
-                    tmp = tmp + Character.toString(json.charAt(i));
+                while(str.charAt(i) != '"'){
+                    tmp = tmp + Character.toString(str.charAt(i));
                     i++;
                 }
-                i++;
-                if(tmp.equals("FINISHED")){
+                if(tmp.equals("FINISHED") && --finished == 0){
                     break;
                 }
                 phase.add(tmp);
             }
-            else if(json.substring(i, i+17).contains("\"durationSeconds\"")){
+            else if(str.substring(i, i+17).contains("\"durationSeconds\"")){
                 i = i+17;
-                while(json.charAt(i) != ':'){
+                while(str.charAt(i) != ':'){
                     i++;
                 }
                 i++;
                 String tmp = "";
-                while(json.charAt(i) != ','){
-                    tmp  = tmp + Character.toString(json.charAt(i));
+                while(str.charAt(i) != ','){
+                    tmp  = tmp + Character.toString(str.charAt(i));
                     i++;
                 }
-                i++;
                 durationSeconds.add(Integer.parseInt(tmp.trim()));
             }
-            else if(json.substring(i, i+18).contains("\"startTimeSeconds\"")){
+            else if(str.substring(i, i+18).contains("\"startTimeSeconds\"")){
                 i = i+18;
-                while(json.charAt(i) != ':'){
+                while(str.charAt(i) != ':'){
                     i++;
                 }
                 i++;
                 String tmp = "";
-                while(json.charAt(i) != ','){
-                    tmp  = tmp + Character.toString(json.charAt(i));
+                while(str.charAt(i) != ','){
+                    tmp  = tmp + Character.toString(str.charAt(i));
                     i++;
                 }
-                i++;
                 startTimeSeconds.add(Integer.parseInt(tmp.trim()));
             }
-            else if(json.substring(i, i+21).contains("\"relativeTimeSeconds\"")){
+            else if(str.substring(i, i+21).contains("\"relativeTimeSeconds\"")){
                 i = i+21;
-                if(json.substring(i, i+19).contains("-")){
-                    while(json.charAt(i) != '-'){
+                if(str.substring(i, i+19).contains("-")){
+                    while(str.charAt(i) != '-'){
                         i++;
                     }
                     i++;
                     String tmp = "";
-                    while(json.charAt(i) != '}'){
-                        tmp  = tmp + Character.toString(json.charAt(i));
+                    while(str.charAt(i) != '}'){
+                        tmp  = tmp + Character.toString(str.charAt(i));
                         i++;
                     }
                     i++;
                     relativeTimeSeconds.add(Integer.parseInt(tmp.trim()));
                 }
                 else{
-                    while(json.charAt(i) != ':'){
+                    while(str.charAt(i) != ':'){
                         i++;
                     }
                     i++;
                     String tmp = "";
-                    while(json.charAt(i) != '}'){
-                        tmp  = tmp + Character.toString(json.charAt(i));
+                    while(str.charAt(i) != '}'){
+                        tmp  = tmp + Character.toString(str.charAt(i));
                         i++;
                     }
-                    i++;
                     relativeTimeSeconds.add(Integer.parseInt(tmp.trim()));
                 }
             }
@@ -183,6 +185,7 @@ public class CodeforceContestInfo {
                 continue;
             }
         }
+
 
         Groups datas = new Groups();
         datas.name = new ArrayList<>(name);

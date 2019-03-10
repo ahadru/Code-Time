@@ -36,8 +36,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         if(data.phase.get(position).equals("BEFORE")){
             viewHolder.status.setText("Upcoming");
         }
+        else if(data.phase.get(position).equals("FINISHED")){
+            viewHolder.status.setText("Finished");
+        }
         else{
-            viewHolder.status.setText("Live");
+            viewHolder.status.setText("live");
         }
 
 

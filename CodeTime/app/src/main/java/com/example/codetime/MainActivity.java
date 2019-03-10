@@ -2,6 +2,8 @@ package com.example.codetime;
 import com.example.codetime.contest_api_call.CodeforcesUpdate;
 import com.example.codetime.contest_data.codeforces.*;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,12 +20,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private final String FILE_PATH = "contest_data.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,40 +70,74 @@ public class MainActivity extends AppCompatActivity
 
         //Activity Task when the app will run
         //recycle view by these data
-        String json = "";
-        CodeforcesUpdate internet = new CodeforcesUpdate();
-        internet.execute();
-        json = internet.getData();
+        String json = readFromInternet();
         if(json == null){
-            Toast.makeText(getApplicationContext(),"Data not find from internet", Toast.LENGTH_SHORT);
-            try {
-                InputStream is = getAssets().open("all_contest_data");
-                int size = is.available();
-                byte[] buffer = new byte[size];
-                is.read(buffer);
-                is.close();
-                json = new String(buffer);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            json = readFromInternal();
+//            if(json == null){
+//                try {
+//                    InputStream is = getAssets().open("all_contest_data.json");
+//                    int size = is.available();
+//                    byte[] buffer = new byte[size];
+//                    is.read(buffer);
+//                    is.close();
+//                    json = new String(buffer);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
             CodeforceContestInfo info = new CodeforceContestInfo(json);
             recyclerView.setAdapter(new RecyclerViewAdapter(info.getAllContest()));
 
         }
         else{
-//            try {
-//                PrintWriter out = new PrintWriter(new File(this.getAssets("all_contest_data")));
-//            }catch(Exception e){
-//                e.printStackTrace();
-//            }
-
-
+            writeFile(json);
             CodeforceContestInfo info = new CodeforceContestInfo(json);
             recyclerView.setAdapter(new RecyclerViewAdapter(info.getAllContest()));
         }
 
     }
 
+    //data will be written in the internal storage
+    void writeFile(String json){
+        try {
+            FileOutputStream w = openFileOutput(FILE_PATH, Context.MODE_PRIVATE);
+            w.write(json.getBytes());
+            w.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //data will be read from internal storage
+    String readFromInternal(){
+        StringBuilder readFile = new StringBuilder();
+        try {
+            FileInputStream r = openFileInput(FILE_PATH);
+            InputStreamReader ir = new InputStreamReader(r);
+            BufferedReader br = new BufferedReader(ir);
+            String text;
+            while ((text = br.readLine()) != null){
+                readFile.append(text).append("\n");
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return readFile.toString();
+    }
+
+    //data will be collected from codeforces web server by codeforeces api
+    String readFromInternet(){
+        String json;
+        CodeforcesUpdate internet = new CodeforcesUpdate();
+        internet.execute();
+        json = internet.getData();
+        return json;
+    }
 
 
 
@@ -123,7 +166,10 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.refresh) {
+            Toast.makeText(MainActivity.this,"Refreshed",Toast.LENGTH_SHORT);
+            Intent intent = new Intent(MainActivity.this,MainActivity.class);
+            startActivity(intent);
             return true;
         }
 
@@ -136,13 +182,15 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_about) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_websites) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_tutorials) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_settings) {
+            Intent intent = new Intent(MainActivity.this,Settings.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_share) {
 

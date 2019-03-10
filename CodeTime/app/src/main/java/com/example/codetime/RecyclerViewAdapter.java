@@ -39,7 +39,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         else{
             viewHolder.status.setText("Live");
         }
-        viewHolder.timeStart.setText(new TimeFormater(startTimeInSecends).getTime());
+
+        String tmpTime = new TimeFormater(startTimeInSecends).getTime();
+
+        String []splitedTime = tmpTime.split(" ");
+
+
+        viewHolder.timeStart.setText();
+
         viewHolder.timeEnd.setText(new TimeFormater(endTimeInSeconds).getTime());
         //viewHolder.contestImage.set
 
@@ -47,7 +54,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        return 5;
+        return data.phase.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

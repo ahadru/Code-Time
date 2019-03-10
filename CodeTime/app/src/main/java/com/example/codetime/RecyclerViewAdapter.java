@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.codetime.contest_data.codeforces.Groups;
+import com.example.codetime.contest_data.codeforces.utilities.TimeFormater;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
     Groups data;
@@ -26,16 +27,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
+        int contestDuration = data.durationSeconds.get(position);
+        long startTimeInSecends = data.startTimeSeconds.get(position);
+        long endTimeInSeconds = startTimeInSecends + (long) contestDuration;
+
         viewHolder.title.setText(data.WEBSITE_NAME);
         viewHolder.contestTitle.setText(data.name.get(position));
-        if(data.phase.equals("BEFORE")){
+        if(data.phase.get(position).equals("BEFORE")){
             viewHolder.status.setText("Upcoming");
         }
         else{
             viewHolder.status.setText("Live");
         }
-//        viewHolder.timeStart.setText();
-//        viewHolder.timeEnd.setText();
+        viewHolder.timeStart.setText(new TimeFormater(startTimeInSecends).getTime());
+        viewHolder.timeEnd.setText(new TimeFormater(endTimeInSeconds).getTime());
+        //viewHolder.contestImage.set
 
     }
 

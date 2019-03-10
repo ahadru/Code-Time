@@ -86,10 +86,9 @@ public class CodeforceContestInfo {
 
         // Now do the magic.
         String str = json.split("\\[")[1];
-        if(json.substring(0, 100).contains("OK")){
+        if(json.substring(0, 100).contains("OK")) {
             Data.STATUS = true;
         }
-        System.out.println(json.length());
         for(int i = 0; i < json.length()-30 ; i++) {
 
             if(json.substring(i, i+6).contains("\"name\"")){
@@ -179,6 +178,9 @@ public class CodeforceContestInfo {
                     i++;
                     relativeTimeSeconds.add(Integer.parseInt(tmp.trim()));
                 }
+            }
+            else{
+                continue;
             }
         }
 

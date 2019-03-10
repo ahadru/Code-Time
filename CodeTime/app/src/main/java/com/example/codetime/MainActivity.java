@@ -18,7 +18,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import java.io.File;
 import java.io.InputStream;
+import java.io.PrintWriter;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -80,6 +82,13 @@ public class MainActivity extends AppCompatActivity
 
         }
         else{
+//            try {
+//                PrintWriter out = new PrintWriter(new File(this.getAssets("all_contest_data")));
+//            }catch(Exception e){
+//                e.printStackTrace();
+//            }
+
+
             CodeforceContestInfo info = new CodeforceContestInfo(json);
             recyclerView.setAdapter(new RecyclerViewAdapter(info.getAllContest()));
         }

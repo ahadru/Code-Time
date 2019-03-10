@@ -28,7 +28,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
         viewHolder.title.setText(data.WEBSITE_NAME);
         viewHolder.contestTitle.setText(data.name.get(position));
-        viewHolder.status.setText(data.phase.get(position));
+        if(data.phase.equals("BEFORE")){
+            viewHolder.status.setText("Upcoming");
+        }
+        else{
+            viewHolder.status.setText("Live");
+        }
+//        viewHolder.timeStart.setText();
+//        viewHolder.timeEnd.setText();
+
     }
 
     @Override
@@ -39,6 +47,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView title,contestTitle,status;
         ImageView contestImage;
+        TextView timeStart, timeEnd;
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -46,7 +55,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             title = itemView.findViewById(R.id.list_item_title);
             contestTitle = itemView.findViewById(R.id.contest_title);
             status = itemView.findViewById(R.id.contest_status);
-
+            timeStart = itemView.findViewById(R.id.timeStart);
+            timeEnd = itemView.findViewById(R.id.timeEnd);
         }
 
     }

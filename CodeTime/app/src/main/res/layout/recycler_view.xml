@@ -31,7 +31,7 @@
             android:id="@+id/contest_title_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/ic_launcher_code_time"/>
+            app:srcCompat="@mipmap/codeforces"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -101,13 +101,26 @@
                 android:layout_height="2dp"
                 android:background="#ea820b"/>
 
-            <TextView
-                android:id="@+id/timeStart"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:gravity="center_horizontal"
                 android:layout_height="wrap_content"
-                android:text="Time"
-                android:textSize="25sp"/>
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/timeStart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Time"
+                    android:gravity="center_horizontal"
+                    android:textSize="25sp"/>
+                <TextView
+                    android:id="@+id/dateStart"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textSize="20sp"
+                    android:gravity="center_horizontal"/>
+            </LinearLayout>
 
 
         </LinearLayout>
@@ -129,13 +142,26 @@
                 android:layout_height="2dp"
                 android:background="#e54343"/>
 
-            <TextView
-                android:id="@+id/timeEnd"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="Time"
-                android:textSize="25sp"/>
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/timeEnd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Time"
+                    android:gravity="center_horizontal"
+                    android:textSize="25sp"/>
+                <TextView
+                    android:id="@+id/dateEnd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:gravity="center_horizontal"
+                    android:textSize="20sp"/>
+            </LinearLayout>
         </LinearLayout>
 
 

@@ -40,14 +40,29 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             viewHolder.status.setText("Live");
         }
 
-        String tmpTime = new TimeFormater(startTimeInSecends).getTime();
 
-        String []splitedTime = tmpTime.split(" ");
+        //Time and date set
+        String startTime = new TimeFormater(startTimeInSecends).getTime();
+        String month = MONTH.getMonthValue(
+                Integer.parseInt(startTime.split(" ")[0].split("-")[1])
+        );
+        String day = startTime.split(" ")[0].split("-")[2];
+        String hour = startTime.split(" ")[1].split(":")[0];
+        String munite = startTime.split(" ")[1].split(":")[1];
+        viewHolder.timeStart.setText(hour + ":" + munite);
+        viewHolder.dateStart.setText(month + ", " + day);
+
+        String endTime = new TimeFormater(endTimeInSeconds).getTime();
+        month = MONTH.getMonthValue(
+                Integer.parseInt(endTime.split(" ")[0].split("-")[1])
+        );
+        day = endTime.split(" ")[0].split("-")[2];
+        hour = endTime.split(" ")[1].split(":")[0];
+        munite = endTime.split(" ")[1].split(":")[1];
+        viewHolder.timeEnd.setText(hour + ":" + munite);
+        viewHolder.dateEnd.setText(month + ", " + day);
 
 
-        viewHolder.timeStart.setText();
-
-        viewHolder.timeEnd.setText(new TimeFormater(endTimeInSeconds).getTime());
         //viewHolder.contestImage.set
 
     }
@@ -60,7 +75,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView title,contestTitle,status;
         ImageView contestImage;
-        TextView timeStart, timeEnd;
+        TextView timeStart, timeEnd,dateStart,dateEnd;
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -70,6 +85,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             status = itemView.findViewById(R.id.contest_status);
             timeStart = itemView.findViewById(R.id.timeStart);
             timeEnd = itemView.findViewById(R.id.timeEnd);
+            dateStart = itemView.findViewById(R.id.dateStart);
+            dateEnd = itemView.findViewById(R.id.dateEnd);
         }
 
     }

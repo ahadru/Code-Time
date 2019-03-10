@@ -20,22 +20,23 @@
                 android:id="@+id/image_racherrank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/rackerrank_icon" />
+                android:src="@mipmap/rackerrank_icon"
+                />
 
             <TextView
                 android:id="@+id/text_rackerrank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="33sp"
+                android:layout_marginTop="23sp"
                 android:text="hackerrank"
-                android:textSize="30sp" />
+                android:textSize="25sp" />
 
             <CheckBox
                 android:id="@+id/checkBox1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70sp"
-                android:layout_marginTop="26sp"
+                android:layout_marginLeft="140sp"
+                android:layout_marginTop="23sp"
                 android:layout_weight="1" />
 
 
@@ -54,16 +55,16 @@
                 android:id="@+id/text_codechef"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="33sp"
+                android:layout_marginTop="23sp"
                 android:text="codechef"
-                android:textSize="30sp" />
+                android:textSize="25sp" />
 
             <CheckBox
                 android:id="@+id/checkBox2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70sp"
-                android:layout_marginTop="26sp"
+                android:layout_marginLeft="160sp"
+                android:layout_marginTop="23sp"
                 android:layout_weight="1" />
 
         </LinearLayout>
@@ -75,11 +76,304 @@
                 android:id="@+id/codeforces"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src=""/>
+                android:src="@mipmap/hackerearth_icon"/>
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:id="@+id/hackerearth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HackerEarth"
+                android:layout_marginTop="14sp"
+                android:textSize="25sp" />
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="125sp"
+                android:layout_marginTop="10sp"
+                android:layout_weight="1" />
         </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/topcoder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/topcoder_icon"/>
+
+            <TextView
+                android:id="@+id/topcoder_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TopCoder"
+                android:layout_marginTop="14sp"
+                android:textSize="25sp" />
+            <CheckBox
+                android:id="@+id/checkBox4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="153sp"
+                android:layout_marginTop="10sp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/codeforce_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/codeforces_icon"/>
+
+            <TextView
+                android:id="@+id/codeforces_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CodeForces"
+                android:layout_marginTop="14sp"
+                android:textSize="25sp" />
+            <CheckBox
+                android:id="@+id/checkBox5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="131sp"
+                android:layout_marginTop="10sp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/othercontest_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/other_icon"/>
+
+            <TextView
+                android:id="@+id/other_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other Contest"
+                android:layout_marginTop="14sp"
+                android:textSize="25sp" />
+            <CheckBox
+                android:id="@+id/checkBox6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="110sp"
+                android:layout_marginTop="10sp"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/other_text_notification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notifications"
+                android:layout_marginTop="14sp"
+                android:textSize="40sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/other_text_notification1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Monthly"
+                android:layout_marginTop="14sp"
+                android:textSize="25sp"
+                />
+            <CheckBox
+                android:id="@+id/checkBox7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="240sp"
+                android:layout_marginTop="10sp"
+                android:layout_weight="1" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/other_text_notification2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Contest"
+                android:layout_marginTop="14sp"
+                android:textSize="25sp"
+                />
+            <CheckBox
+                android:id="@+id/checkBox8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="190sp"
+                android:layout_marginTop="10sp"
+                android:layout_weight="1" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/other_text_remineder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reminerder Setting"
+                android:layout_marginTop="14sp"
+                android:textSize="40sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/other_text_reminerder1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reminerder Sound"
+                android:layout_marginTop="14sp"
+                android:textSize="25sp"
+                />
+            <CheckBox
+                android:id="@+id/checkBox9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="130sp"
+                android:layout_marginTop="10sp"
+                android:layout_weight="1" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/other_text_reminerder2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reminerder Vibration"
+                android:layout_marginTop="14sp"
+                android:textSize="25sp"
+                />
+            <CheckBox
+                android:id="@+id/checkBox10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100sp"
+                android:layout_marginTop="10sp"
+                android:layout_weight="1" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/other_text_general"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="General Setting"
+                android:layout_marginTop="14sp"
+                android:textSize="40sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/other_text_general1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Contest Feed Homepage"
+                android:layout_marginTop="14sp"
+                android:textSize="25sp"
+                />
+            <CheckBox
+                android:id="@+id/checkBox11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8sp"
+                android:layout_marginTop="10sp"
+                android:layout_weight="1" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/other_text_general2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate Us On Google Play"
+                android:layout_marginTop="14sp"
+                android:textSize="25sp"
+                />
+            <CheckBox
+                android:id="@+id/checkBox12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="65sp"
+                android:layout_marginTop="10sp"
+                android:layout_weight="1" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/other_text_general3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Like Us On Facebook"
+                android:layout_marginTop="14sp"
+                android:textSize="25sp"
+                />
+
+
+
+        </LinearLayout>
+
+
+
     </LinearLayout>
 </ScrollView>

@@ -12,368 +12,278 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/image_racherrank"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/rackerrank_icon"
-                />
-
-            <TextView
-                android:id="@+id/text_rackerrank"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="23sp"
-                android:text="hackerrank"
-                android:textSize="25sp" />
-
-            <CheckBox
-                android:id="@+id/checkBox1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="140sp"
-                android:layout_marginTop="23sp"
-                android:layout_weight="1" />
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/image_codechef"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/codechef_icon" />
-
-            <TextView
-                android:id="@+id/text_codechef"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="23sp"
-                android:text="codechef"
-                android:textSize="25sp" />
-
-            <CheckBox
-                android:id="@+id/checkBox2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="160sp"
-                android:layout_marginTop="23sp"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/codeforces"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/hackerearth_icon"/>
-
-            <TextView
-                android:id="@+id/hackerearth"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="HackerEarth"
-                android:layout_marginTop="14sp"
-                android:textSize="25sp" />
-            <CheckBox
-                android:id="@+id/checkBox3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="125sp"
-                android:layout_marginTop="10sp"
-                android:layout_weight="1" />
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:text="Permited Websites"
+            android:textSize="30sp"
+            android:textAlignment="center"
+            android:textColor="#4286f4"
+            android:textStyle="bold"
+            android:background="#bbf441"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
 
-            <ImageView
-                android:id="@+id/topcoder"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/topcoder_icon"/>
+                android:orientation="horizontal"
+                android:layout_margin="7dp"
+                android:background="#c9cacc">
 
-            <TextView
-                android:id="@+id/topcoder_text"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/image_racherrank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@mipmap/rackerrank_icon" />
+
+                <TextView
+                    android:id="@+id/text_rackerrank"
+                    android:layout_width="170dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="Hackerrank"
+                    android:textSize="25sp"
+                    android:gravity="center"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TopCoder"
-                android:layout_marginTop="14sp"
-                android:textSize="25sp" />
-            <CheckBox
-                android:id="@+id/checkBox4"
-                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="7dp"
+                android:background="#c9cacc">
+
+                <ImageView
+                    android:id="@+id/image_codechef"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/codechef_icon"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/text_codechef"
+                    android:layout_width="162dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="Codechef"
+                    android:textSize="25sp"
+                    android:gravity="center"
+                    />
+
+                <CheckBox
+                    android:id="@+id/checkBox2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="72dp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="153sp"
-                android:layout_marginTop="10sp"
-                android:layout_weight="1" />
-        </LinearLayout>
+                android:orientation="horizontal"
+                android:layout_margin="7dp"
+                android:background="#c9cacc">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/codeforces"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@mipmap/hackerearth_icon" />
 
-            <ImageView
-                android:id="@+id/codeforce_image"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/hackerearth"
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="HackerEarth"
+                    android:textSize="25sp"
+                    android:gravity="center"/>
+
+                <CheckBox
+
+                    android:id="@+id/checkBox3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/codeforces_icon"/>
+                android:orientation="horizontal"
+                android:layout_margin="7dp"
+                android:background="#c9cacc">
 
-            <TextView
-                android:id="@+id/codeforces_text"
-                android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/topcoder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/topcoder_icon"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/topcoder_text"
+                    android:layout_width="164dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="TopCoder"
+                    android:textSize="25sp"
+                    android:gravity="center"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="CodeForces"
-                android:layout_marginTop="14sp"
-                android:textSize="25sp" />
-            <CheckBox
-                android:id="@+id/checkBox5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="131sp"
-                android:layout_marginTop="10sp"
-                android:layout_weight="1" />
-        </LinearLayout>
+                android:orientation="horizontal"
+                android:layout_margin="7dp"
+                android:background="#c9cacc">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/codeforce_image"
+                    android:layout_width="53dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@mipmap/codeforces_icon" />
 
-            <ImageView
-                android:id="@+id/othercontest_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/other_icon"/>
+                <TextView
+                    android:id="@+id/codeforces_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:text="CodeForces"
+                    android:textSize="25sp"
+                    android:gravity="center"/>
 
-            <TextView
-                android:id="@+id/other_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Other Contest"
-                android:layout_marginTop="14sp"
-                android:textSize="25sp" />
-            <CheckBox
-                android:id="@+id/checkBox6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="110sp"
-                android:layout_marginTop="10sp"
-                android:layout_weight="1" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/other_text_notification"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Notifications"
-                android:layout_marginTop="14sp"
-                android:textSize="40sp"
-                android:textStyle="bold"/>
+                <CheckBox
+                    android:id="@+id/checkBox5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
 
         </LinearLayout>
 
+
+        <TextView
+            android:id="@+id/other_text_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notifications"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp">
 
             <TextView
                 android:id="@+id/other_text_notification1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="Monthly"
-                android:layout_marginTop="14sp"
                 android:textSize="25sp"
-                />
+                android:layout_weight="1"/>
+
             <CheckBox
                 android:id="@+id/checkBox7"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="240sp"
-                android:layout_marginTop="10sp"
-                android:layout_weight="1" />
-
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp">
 
             <TextView
                 android:id="@+id/other_text_notification2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="New Contest"
-                android:layout_marginTop="14sp"
                 android:textSize="25sp"
-                />
+                android:layout_weight="1"/>
             <CheckBox
                 android:id="@+id/checkBox8"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="190sp"
-                android:layout_marginTop="10sp"
-                android:layout_weight="1" />
+                android:layout_height="wrap_content" />
 
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/other_text_remineder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Reminerder Setting"
-                android:layout_marginTop="14sp"
-                android:textSize="40sp"
-                android:textStyle="bold"/>
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/other_text_remineder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reminerder Setting"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp">
 
             <TextView
                 android:id="@+id/other_text_reminerder1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Reminerder Sound"
-                android:layout_marginTop="14sp"
                 android:textSize="25sp"
+                android:layout_weight="1"
                 />
             <CheckBox
                 android:id="@+id/checkBox9"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="130sp"
-                android:layout_marginTop="10sp"
-                android:layout_weight="1" />
+                android:layout_height="wrap_content" />
 
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp">
 
             <TextView
                 android:id="@+id/other_text_reminerder2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Reminerder Vibration"
-                android:layout_marginTop="14sp"
                 android:textSize="25sp"
+                android:layout_weight="1"
                 />
+
             <CheckBox
                 android:id="@+id/checkBox10"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="100sp"
-                android:layout_marginTop="10sp"
-                android:layout_weight="1" />
-
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/other_text_general"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="General Setting"
-                android:layout_marginTop="14sp"
-                android:textSize="40sp"
-                android:textStyle="bold"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/other_text_general1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Set Contest Feed Homepage"
-                android:layout_marginTop="14sp"
-                android:textSize="25sp"
-                />
-            <CheckBox
-                android:id="@+id/checkBox11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8sp"
-                android:layout_marginTop="10sp"
-                android:layout_weight="1" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/other_text_general2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Rate Us On Google Play"
-                android:layout_marginTop="14sp"
-                android:textSize="25sp"
-                />
-            <CheckBox
-                android:id="@+id/checkBox12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="65sp"
-                android:layout_marginTop="10sp"
-                android:layout_weight="1" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/other_text_general3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Like Us On Facebook"
-                android:layout_marginTop="14sp"
-                android:textSize="25sp"
-                />
-
-
-
-        </LinearLayout>
-
-
 
     </LinearLayout>
 </ScrollView>

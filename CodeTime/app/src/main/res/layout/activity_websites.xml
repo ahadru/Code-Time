@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".Settings"
+    tools:context=".Websites"
     android:orientation="vertical">
 
     <LinearLayout
@@ -16,22 +16,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/hackerranck"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="7dp"
+            android:background="#c9cacc">
 
             <ImageView
-                android:id="@+id/image_racherrank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/rackerrank_icon"
                 />
 
             <TextView
-                android:id="@+id/text_rackerrank"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="23sp"
-                android:text="hackerrank"
-                android:textSize="25sp" />
+                android:layout_height="match_parent"
+                android:text="Hackerrank"
+                android:textSize="25sp"
+                android:gravity="center"
+                android:layout_weight="1"/>
 
 
 
@@ -40,21 +41,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/codechef">
+            android:id="@+id/codechef"
+            android:layout_margin="7dp"
+            android:background="#c9cacc">
 
             <ImageView
-                android:id="@+id/image_codechef"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/codechef_icon" />
 
             <TextView
-                android:id="@+id/text_codechef"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="23sp"
-                android:text="codechef"
-                android:textSize="25sp" />
+                android:layout_height="match_parent"
+                android:text="Codechef"
+                android:textSize="25sp"
+                android:layout_weight="1"
+                android:gravity="center"/>
 
 
         </LinearLayout>
@@ -62,65 +64,67 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/hackerearth_lay">
+            android:id="@+id/hackerearth"
+            android:layout_margin="7dp"
+            android:background="#c9cacc">
 
 
             <ImageView
-                android:id="@+id/codeforces"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/hackerearth_icon"/>
 
             <TextView
-                android:id="@+id/hackerearth"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="HackerEarth"
-                android:layout_marginTop="14sp"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:layout_weight="1"
+                android:gravity="center"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/topcoder_lay">
+            android:id="@+id/topcoder"
+            android:layout_margin="7dp"
+            android:background="#c9cacc">
 
             <ImageView
-                android:id="@+id/topcoder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/topcoder_icon"/>
 
             <TextView
-                android:id="@+id/topcoder_text"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="TopCoder"
-                android:layout_marginTop="14sp"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:layout_weight="1"
+                android:gravity="center"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:id="@+id/codeforces_lay">
+            android:id="@+id/codeforces"
+            android:layout_margin="7dp"
+            android:background="#c9cacc">
 
             <ImageView
-                android:id="@+id/codeforce_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/codeforces_icon"/>
 
             <TextView
-                android:id="@+id/codeforces_text"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="CodeForces"
-                android:layout_marginTop="14sp"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                android:layout_weight="1"
+                android:gravity="center"/>
         </LinearLayout>
-
     </LinearLayout>
 </ScrollView>

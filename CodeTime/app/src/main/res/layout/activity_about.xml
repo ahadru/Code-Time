@@ -20,33 +20,38 @@
 
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="About Apps"
             android:textSize="30sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:background="#429bf4"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="This Apps gives update schedule about programming contest."
             android:textSize="25sp"
+            android:background="#7c838e"
             />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Developers Team:"
                 android:textSize="30sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:background="#429bf4"
+                android:layout_marginTop="10dp"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="1.Ahaduzzaman
 2.Arifujjaman
 3.Jannatul Maua Borsha
 4.Sanjida Asad Urmi"
                 android:textSize="25sp"
+                android:background="#7c838e"
                 />
 
 

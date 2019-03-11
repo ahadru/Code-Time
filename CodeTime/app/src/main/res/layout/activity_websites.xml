@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Settings"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/hackerranck"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/image_racherrank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/rackerrank_icon"
+                />
+
+            <TextView
+                android:id="@+id/text_rackerrank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23sp"
+                android:text="hackerrank"
+                android:textSize="25sp" />
+
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/codechef">
+
+            <ImageView
+                android:id="@+id/image_codechef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/codechef_icon" />
+
+            <TextView
+                android:id="@+id/text_codechef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23sp"
+                android:text="codechef"
+                android:textSize="25sp" />
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/hackerearth_lay">
+
+
+            <ImageView
+                android:id="@+id/codeforces"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/hackerearth_icon"/>
+
+            <TextView
+                android:id="@+id/hackerearth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HackerEarth"
+                android:layout_marginTop="14sp"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/topcoder_lay">
+
+            <ImageView
+                android:id="@+id/topcoder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/topcoder_icon"/>
+
+            <TextView
+                android:id="@+id/topcoder_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TopCoder"
+                android:layout_marginTop="14sp"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/codeforces_lay">
+
+            <ImageView
+                android:id="@+id/codeforce_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/codeforces_icon"/>
+
+            <TextView
+                android:id="@+id/codeforces_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CodeForces"
+                android:layout_marginTop="14sp"
+                android:textSize="25sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

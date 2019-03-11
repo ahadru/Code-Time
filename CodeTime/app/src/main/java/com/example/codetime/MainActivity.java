@@ -67,24 +67,23 @@ public class MainActivity extends AppCompatActivity
 
 
 
-
         //Activity Task when the app will run
         //recycle view by these data
         String json = readFromInternet();
         if(json == null){
             json = readFromInternal();
-//            if(json == null){
-//                try {
-//                    InputStream is = getAssets().open("all_contest_data.json");
-//                    int size = is.available();
-//                    byte[] buffer = new byte[size];
-//                    is.read(buffer);
-//                    is.close();
-//                    json = new String(buffer);
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
+            if(json == null || json.equals("")){
+                try {
+                    InputStream is = getAssets().open("all_contest_data.json");
+                    int size = is.available();
+                    byte[] buffer = new byte[size];
+                    is.read(buffer);
+                    is.close();
+                    json = new String(buffer);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
             CodeforceContestInfo info = new CodeforceContestInfo(json);
             recyclerView.setAdapter(new RecyclerViewAdapter(info.getAllContest()));
 

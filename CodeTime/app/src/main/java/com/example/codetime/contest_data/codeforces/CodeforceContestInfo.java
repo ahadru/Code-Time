@@ -89,8 +89,8 @@ public class CodeforceContestInfo {
         ArrayList<Integer> relativeTimeSeconds = new ArrayList<>();
 
         // Now do the magic.
+        int finished = 2;
 
-        int finished = 4;
         String str = json.split("\\[")[1];
         a =str;
         if(json.substring(0, 100).contains("OK")){
@@ -122,7 +122,7 @@ public class CodeforceContestInfo {
                     tmp = tmp + Character.toString(str.charAt(i));
                     i++;
                 }
-                if(tmp.equals("FINISHED") && --finished == 0){
+                if(tmp.equals("FINISHED") && (finished-- == 0)){
                     break;
                 }
                 phase.add(tmp);

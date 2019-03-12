@@ -61,6 +61,7 @@
                     android:textColor="#ea820b"
                     android:textSize="15sp"/>
                 <ImageView
+                    android:id="@+id/alarm"
                     android:layout_width="40dp"
                     android:layout_height="wrap_content"
                     android:layout_alignRight="@+id/contest_status"

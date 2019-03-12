@@ -4,6 +4,8 @@ import com.example.codetime.contest_data.codeforces.*;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -29,6 +31,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,15 +43,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -131,10 +125,18 @@ public class MainActivity extends AppCompatActivity
 
     //data will be collected from codeforces web server by codeforeces api
     String readFromInternet(){
-        String json;
-        CodeforcesUpdate internet = new CodeforcesUpdate();
-        internet.execute();
-        json = internet.getData();
+        String json = "";
+        CodeforcesUpdate internet = new CodeforcesUpdate(MainActivity.this);
+//        internet.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+//        json = internet.getData();
+        try {
+            json = internet.execute().get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         return json;
     }
 
@@ -166,7 +168,8 @@ public class MainActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.refresh) {
-            Toast.makeText(MainActivity.this,"Refreshed",Toast.LENGTH_SHORT);
+            Toast.makeText(getApplicationContext(),"Refreshed",Toast.LENGTH_SHORT).show();
+
             Intent intent = new Intent(MainActivity.this,MainActivity.class);
             startActivity(intent);
             return true;
@@ -183,6 +186,8 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_about) {
             // Handle the camera action
+            Intent intent = new Intent(MainActivity.this, About.class);
+            startActivity(intent);
         } else if (id == R.id.nav_websites) {
             Intent intent = new Intent(MainActivity.this, Websites.class);
             startActivity(intent);
@@ -196,6 +201,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
+            Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                    "mailto","ahadsheikh1999@gmail.com", null));
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Subject");
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "Body");
+            startActivity(Intent.createChooser(emailIntent, "Send email..."));
 
         }
 

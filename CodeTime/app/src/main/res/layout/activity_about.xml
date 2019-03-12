@@ -46,10 +46,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="1.Ahaduzzaman
-2.Arifujjaman
-3.Jannatul Maua Borsha
-4.Sanjida Asad Urmi"
+                android:text="Ahaduzzaman, Arifujjaman, Jannatul Maua Borsha, Sanjida Asad Urmi"
                 android:textSize="25sp"
                 android:background="#7c838e"
                 />

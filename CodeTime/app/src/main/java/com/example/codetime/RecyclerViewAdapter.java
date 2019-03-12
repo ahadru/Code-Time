@@ -1,5 +1,6 @@
 package com.example.codetime;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.codetime.contest_data.codeforces.Groups;
 import com.example.codetime.contest_data.codeforces.utilities.TimeFormater;
@@ -33,15 +35,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         viewHolder.title.setText(data.WEBSITE_NAME);
         viewHolder.contestTitle.setText(data.name.get(position));
-        if(data.phase.get(position).equals("BEFORE")){
-            viewHolder.status.setText("Upcoming");
-        }
-        else if(data.phase.get(position).equals("FINISHED")){
-            viewHolder.status.setText("Finished");
-        }
-        else{
-            viewHolder.status.setText("live");
-        }
+        viewHolder.status.setText(data.phase.get(position));
 
 
         //Time and date set
@@ -65,8 +59,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         viewHolder.timeEnd.setText(hour + ":" + munite);
         viewHolder.dateEnd.setText(month + ", " + day);
 
+        viewHolder.alarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(),"Alarm Clicked",Toast.LENGTH_SHORT);
+            }
+        });
 
-        //viewHolder.contestImage.set
 
     }
 
@@ -77,7 +76,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView title,contestTitle,status;
-        ImageView contestImage;
+        ImageView contestImage,alarm;
         TextView timeStart, timeEnd,dateStart,dateEnd;
 
         public ViewHolder(View itemView){
@@ -90,7 +89,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             timeEnd = itemView.findViewById(R.id.timeEnd);
             dateStart = itemView.findViewById(R.id.dateStart);
             dateEnd = itemView.findViewById(R.id.dateEnd);
+            alarm = itemView.findViewById(R.id.alarm);
         }
-
     }
 }

@@ -3,6 +3,13 @@ package com.example.codetime.contest_data.codeforces.utilities;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/*
+    This class give local time
+
+ */
+
+
+
 public class TimeFormater {
     private String BDTTime;
 

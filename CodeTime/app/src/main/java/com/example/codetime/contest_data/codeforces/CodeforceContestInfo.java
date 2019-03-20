@@ -78,7 +78,8 @@ public class CodeforceContestInfo {
     private Groups upComingContest;
 
 
-
+    //It convert JSON data in specific format.
+    //The format is defined in Groups class
     Groups jsonToObject(String json) throws FileNotFoundException {
         ArrayList<String> name = new ArrayList<>();
         ArrayList<String> type = new ArrayList<>();

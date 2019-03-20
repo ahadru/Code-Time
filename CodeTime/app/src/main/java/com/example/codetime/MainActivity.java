@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity
 
 
         //Activity Task when the app will run
-        //recycle view by these data
+        //recycle data in content main
         String json = readFromInternet();
         if(json == null){
             json = readFromInternal();

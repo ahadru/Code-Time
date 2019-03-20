@@ -1,5 +1,7 @@
 package com.example.codetime.contest_data.codeforces;
 
+
+//This class will be used as a blueprint of codeforces contest data
 import java.util.ArrayList;
 public class Groups extends Data{
     public int id;

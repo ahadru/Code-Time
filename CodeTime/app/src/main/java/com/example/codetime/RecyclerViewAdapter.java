@@ -3,6 +3,7 @@ package com.example.codetime;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +19,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public RecyclerViewAdapter(Groups data){
         this.data = data;
     }
+
 
     @NonNull
     @Override
@@ -62,7 +64,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         viewHolder.alarm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(),"Alarm Clicked",Toast.LENGTH_SHORT);
+                Toast.makeText(view.getContext(),"Alarm set",Toast.LENGTH_SHORT).show();
             }
         });
 

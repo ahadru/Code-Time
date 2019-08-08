@@ -65,6 +65,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View view) {
                 Toast.makeText(view.getContext(),"Alarm set",Toast.LENGTH_SHORT).show();
+
             }
         });
 
